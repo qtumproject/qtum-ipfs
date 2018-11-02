@@ -32,7 +32,6 @@
         "@babel/plugin-transform-async-to-generator": "^7.1.0",
         "@babel/plugin-transform-object-assign": "^7.0.0",
         "@babel/preset-env": "^7.1.0",
-        "@babel/preset-es2015": "^7.0.0-beta.53",
         "@babel/preset-react": "^7.0.0",
         "babel-loader": "^8.0.0",
         "babel-plugin-import": "^1.11.0",
@@ -41,12 +40,12 @@
         "webpack-dev-server": "^1.8.2"
     },
     "dependencies": {
-        "ipfs-api": "^26.0.3",
-        "react": "^16.6.0",
-        "react-dom": "^15.4.2",
         "@babel/polyfill": "^7.0.0",
         "@material-ui/core": "^3.3.2",
         "@material-ui/icons": "^3.0.1",
-        "qtumjs": "^1.9.1"
+        "ipfs-api": "^26.0.3",
+        "qtumjs": "^1.9.1",
+        "react": "^16.6.0",
+        "react-dom": "^16.6.0"
     }
 }
