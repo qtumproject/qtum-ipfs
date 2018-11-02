@@ -36,14 +36,14 @@
         "@babel/preset-react": "^7.0.0",
         "babel-loader": "^8.0.0",
         "babel-plugin-import": "^1.11.0",
-        "ipfs-api": "^26.0.3",
-        "react": "^15.4.2",
-        "react-dom": "^15.4.2",
         "react-hot-loader": "^4.3.12",
         "webpack": "^2.0.0",
         "webpack-dev-server": "^1.8.2"
     },
     "dependencies": {
+        "ipfs-api": "^26.0.3",
+        "react": "^16.6.0",
+        "react-dom": "^15.4.2",
         "@babel/polyfill": "^7.0.0",
         "@material-ui/core": "^3.3.2",
         "@material-ui/icons": "^3.0.1",
