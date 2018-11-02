@@ -31,7 +31,7 @@ const theme = createMuiTheme({
 
 const styles = (theme) => ({
     container: {
-        width: '960px',
+        width: '1200px',
         margin: '0 auto'
     },
     input: {
@@ -46,6 +46,11 @@ const styles = (theme) => ({
     fileHash: {
         color: '#fff',
         underline: 'none'
+    },
+    tableCell: {
+        maxWidth: '400px',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden'
     }
 })
 
@@ -185,8 +190,10 @@ export default class App extends React.Component {
                             {
                                 files_in_contract.map((file, index) => (
                                     <TableRow key={index}>
-                                        <TableCell style={style}>{file}</TableCell>
-                                        <TableCell style={style}>{addressArray[index]}</TableCell>
+                                        {
+                                            (file.split('__').length === 4 ? file.split('__') : (file + '__').split('__')).map(str => <TableCell className={classes.tableCell}>{str}</TableCell>)
+                                        }
+                                        <TableCell className={classes.tableCell}>{addressArray[index]}</TableCell>
                                     </TableRow>
                                 ))
                             }
