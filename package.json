@@ -1,30 +1,52 @@
 {
-  "name": "upload-file-via-browser",
-  "version": "1.0.0",
-  "description": "Upload file to IPFS via browser using js-ipfs-api with Webpack",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "author": "Harlan T Wood <code@harlantwood.net>",
-  "contributors": [
-    "Victor Bjelkholm <victor@ipfs.io>"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-es2015": "^7.0.0-beta.53",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-stage-0": "^7.0.0",
-    "babel-core": "^5.4.7",
-    "babel-loader": "^5.1.2",
-    "ipfs-api": "^26.0.3",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-hot-loader": "^1.3.1",
-    "webpack": "^2.0.0",
-    "webpack-dev-server": "^1.8.2"
-  },
-  "dependencies": {
-    "qtumjs": "^1.9.1"
-  }
+    "name": "upload-file-via-browser",
+    "version": "1.0.0",
+    "description": "Upload file to IPFS via browser using js-ipfs-api with Webpack",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "author": "Harlan T Wood <code@harlantwood.net>",
+    "contributors": [
+        "Victor Bjelkholm <victor@ipfs.io>"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "@babel/plugin-proposal-decorators": "^7.1.2",
+        "@babel/plugin-proposal-do-expressions": "^7.0.0",
+        "@babel/plugin-proposal-export-default-from": "^7.0.0",
+        "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+        "@babel/plugin-proposal-function-bind": "^7.0.0",
+        "@babel/plugin-proposal-function-sent": "^7.0.0",
+        "@babel/plugin-proposal-json-strings": "^7.0.0",
+        "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+        "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+        "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+        "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+        "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+        "@babel/plugin-syntax-import-meta": "^7.0.0",
+        "@babel/plugin-transform-async-to-generator": "^7.1.0",
+        "@babel/plugin-transform-object-assign": "^7.0.0",
+        "@babel/preset-env": "^7.1.0",
+        "@babel/preset-es2015": "^7.0.0-beta.53",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.0",
+        "babel-plugin-import": "^1.11.0",
+        "ipfs-api": "^26.0.3",
+        "react": "^15.4.2",
+        "react-dom": "^15.4.2",
+        "react-hot-loader": "^4.3.12",
+        "webpack": "^2.0.0",
+        "webpack-dev-server": "^1.8.2"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.0.0",
+        "@material-ui/core": "^3.3.2",
+        "@material-ui/icons": "^3.0.1",
+        "qtumjs": "^1.9.1"
+    }
 }

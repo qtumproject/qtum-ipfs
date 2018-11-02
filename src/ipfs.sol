@@ -1,24 +1,25 @@
 pragma solidity ^0.4.24;
 contract ipfs{
- string[] name;
+ string[] records;
+ address[] addr;
  uint256 index = 0;
- mapping (string => string) nametohash;
-
  
- function sendHash(string _name,string _ipfsHash) public {
-     name.push(_name);
-     nametohash[_name] = _ipfsHash;
+ function sendHash(string recordData) public {
+     records.push(recordData);
+     addr.push(msg.sender);
      index++;
  }
- function getindex() public view returns (uint256){
-     return index;
+ 
+ function getIndex() public view returns (uint256 resIndex){
+     resIndex = index;
+     return resIndex;
  }
-  function getname(uint256 _index) public view returns (string ipfsName) {
-   ipfsName = name[_index];
-   return;
+ function getRecord(uint256 _index) public view returns (string oneRecord) {
+   oneRecord = records[_index];
+   return oneRecord;
  }
- function gethash(string _name) public view returns (string ipfsNameHash){
-     ipfsNameHash = nametohash[_name];
-     return;
+ function getAddressArr() public view returns (address[] addrArr){
+     addrArr = addr;
+     return addrArr;
  }
 }
