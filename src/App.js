@@ -132,13 +132,8 @@ export default class App extends React.Component {
         }
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-    }
-
     render() {
         const { added_file_hash, files_in_contract, addressArray, loading } = this.state
-        const style = { width: '50%' }
         const { classes } = this.props
         return (
             <MuiThemeProvider theme={theme}>
@@ -173,7 +168,7 @@ export default class App extends React.Component {
                                     <Button
                                         variant="outlined"
                                         component="a"
-                                        color="success"
+                                        color="primary"
                                         className={classes.button}
                                         target='_blank'
                                         href={'https://ipfs.io/ipfs/' + added_file_hash}
@@ -191,7 +186,7 @@ export default class App extends React.Component {
                                 files_in_contract.map((file, index) => (
                                     <TableRow key={index}>
                                         {
-                                            (file.split('__').length === 4 ? file.split('__') : (file + '__').split('__')).map(str => <TableCell className={classes.tableCell}>{str}</TableCell>)
+                                            (file.split('__').length === 4 ? file.split('__') : (file + '__').split('__')).map((str, i) => <TableCell key={i} className={classes.tableCell}>{str}</TableCell>)
                                         }
                                         <TableCell className={classes.tableCell}>{addressArray[index]}</TableCell>
                                     </TableRow>
