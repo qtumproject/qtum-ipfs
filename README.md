@@ -9,7 +9,7 @@ See [js-ipfs-api documentation](https://github.com/ipfs/js-ipfs-api)
 
 # Quick Start
 
-Before you start your own qtum-ipfs demo,you should start your own IPFS node and Qtum node.
+Before you start your own qtum-ipfs demo,you should start your own [IPFS node](https://github.com/ipfs/ipfs) and [Qtum node](https://github.com/qtumproject/qtum/releases).
 
 ## Get the source code and install the package we need
 ```
@@ -22,6 +22,7 @@ npm install
 ```
 
 ## start Qtum node
+
 ```
 /Applications/Qtum-Qt.app/Contents/MacOS/Qtum-Qt -testnet -server -rpcuser=atx -rpcpassword=atx -rpcport=13889
 
@@ -43,6 +44,26 @@ Simple Example
 
 ```
 lcp --proxyUrl http://localhost:13889  --proxyPartial ""
+```
+
+## modify APP.js
+You need to modify the JS file so that JS can connect to your own IPFS node and Qtum node.
+If you want to connect your local IPFS node,modify the ipfsApi like this:
+
+```
+ipfsApi = ipfsAPI('localhost', '5001')
+```
+
+else,connect to remote IPFS node like this:
+
+```
+ipfsApi = ipfsAPI('ipfs.infura.io', '5001', { protocol: 'https' })
+```
+
+Change the contract config like this:
+
+```
+contract = (new Qtum('http://atx:atx@localhost:8010', repo)).contract('ipfs.sol')
 ```
 
 ## start the demo web app
