@@ -73,6 +73,10 @@ export default class App extends React.Component {
 
     fileName = ''
 
+    componentDidMount() {
+        this.getContractInfo()
+    }
+
     captureFile = (event) => {
         event.stopPropagation()
         event.preventDefault()
@@ -83,13 +87,9 @@ export default class App extends React.Component {
         reader.readAsArrayBuffer(file)
     }
 
-    saveToIpfs = async (reader) => {
-        let ipfsId = ''
-        let fromAddr = ''
-        let sendStr = ''
-        let fileResult = []
-        const buffer = Buffer.from(reader.result)
-        this.setState({ loading: true })
+    getContractInfo = async () => {
+        this.fileResult = []
+
         //get each record in the contract
         const getIndexRes = await this.contract.call("getIndex")
         const recordNum = getIndexRes["outputs"][0]["words"][0]
@@ -98,18 +98,26 @@ export default class App extends React.Component {
         const getRecordRes = await Promise.all(Array.from({ length: recordNum }, (item, i) => this.contract.call("getRecord", [i])))
         getRecordRes.forEach((recordRes) => {
             const oneRecord = recordRes['outputs'][0].toString()
-            fileResult.push(oneRecord)
+            this.fileResult.push(oneRecord)
         })
 
         //get the sender address array
         const getAddressArrRes = await this.contract.call("getAddressArr")
         this.setState({
             addressArray: getAddressArrRes['outputs'][0],
-            files_in_contract: fileResult,
+            files_in_contract: this.fileResult,
         })
 
         console.log("all send address array :", this.state.addressArray)
-        console.log("file result:", fileResult)
+        console.log("file result:", this.fileResult)
+    }
+
+    saveToIpfs = async (reader) => {
+        let ipfsId = ''
+        let fromAddr = ''
+        let sendStr = ''
+        const buffer = Buffer.from(reader.result)
+        this.setState({ loading: true })
 
         //add a file to ipfs
         try {
