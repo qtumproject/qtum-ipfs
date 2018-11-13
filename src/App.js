@@ -66,7 +66,7 @@ default class App extends React.Component {
     //init IPFS
     ipfsApi = ipfsAPI('ipfs.infura.io', '5001', {protocol: 'https'})
     //init Qtum
-    contract = (new Qtum('http://atx:atx@127.0.0.1:8010', repo)).contract('ipfs.sol')
+    contract = (new Qtum('http://atx:atx@127.0.0.1:8010', repo)).contract('IpfsRecord.sol')
 
     componentDidMount() {
         this.getContractInfo()
