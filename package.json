@@ -1,13 +1,13 @@
 {
-    "name": "upload-file-via-browser",
+    "name": "qtum-ipfs",
     "version": "1.0.0",
-    "description": "Upload file to IPFS via browser using js-ipfs-api with Webpack",
+    "description": "Share files using Qtum and IPFS",
     "scripts": {
         "start": "node server.js"
     },
-    "author": "Harlan T Wood <code@harlantwood.net>",
+    "author": "Ai Tianxiang <tianxiangai@pku.edu.cn>",
     "contributors": [
-        "Victor Bjelkholm <victor@ipfs.io>"
+        "Ai Tianxiang <tianxiangai@pku.edu.cn>"
     ],
     "license": "MIT",
     "devDependencies": {

@@ -171,7 +171,7 @@ export default class App extends React.Component {
                                         color="primary"
                                         className={classes.button}
                                         target='_blank'
-                                        href={'https://ipfs.io/ipfs/' + added_file_hash}
+                                        href={'https://ipfs.infura.io/ipfs/' + added_file_hash}
                                     >
                                         {added_file_hash}
                                     </Button>
