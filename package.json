@@ -7,7 +7,8 @@
     },
     "author": "Ai Tianxiang <tianxiangai@pku.edu.cn>",
     "contributors": [
-        "Ai Tianxiang <tianxiangai@pku.edu.cn>"
+        "Ai Tianxiang <tianxiangai@pku.edu.cn>",
+        "Zheng Yi <zhengyi@qtum.org>"
     ],
     "license": "MIT",
     "devDependencies": {
