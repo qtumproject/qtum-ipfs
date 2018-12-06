@@ -21,8 +21,10 @@ $ npm install
 // configuration in file src/App.js for a public node of Infura
 ipfsApi = ipfsAPI('ipfs.infura.io', '5001', {protocol: 'https'})
 
-// command to start a local IPFS node
+// command to start a local IPFS node and set up CORS
 $ ipfs daemon
+$ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin "[\"*\"]"
+$ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"]"
 // configuration in file src/App.js for a local node
 ipfsApi = ipfsAPI('localhost', '5001', {protocol: 'http'})
 ```
